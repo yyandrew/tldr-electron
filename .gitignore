@@ -1,0 +1,10 @@
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+dist/
+
+node_modules
+bower_components
