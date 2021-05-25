@@ -1,4 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const webpack = require('webpack')
+const ReactRefreshTypeScript = require('react-refresh-typescript')
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = [
   {
@@ -38,9 +42,10 @@ module.exports = [
       filename: 'react.js',
     },
     plugins: [
+      isDevelopment && new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-    ],
+    ].filter(Boolean),
   },
 ]
