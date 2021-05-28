@@ -42,7 +42,6 @@ module.exports = [
       filename: 'react.js',
     },
     plugins: [
-      isDevelopment && new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
